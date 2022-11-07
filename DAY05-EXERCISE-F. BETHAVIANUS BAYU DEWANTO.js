@@ -131,16 +131,16 @@ let pushCheck = (array, element) => {
 }
 console.log(pushCheck(newArray1, 3));
 //last question
-let mixedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    checkOddEven = (array) => {
-        let newArray = []
-        for (i = 0; i < array.length; i++) {
-            if (array[i] % 2 === 0) {
-                newArray.push(array[i]);
-            } else {
-                continue;
-            }
+let mixedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let checkOddEven = (array) => {
+    let newArray = []
+    for (i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
+            newArray.push(array[i]);
+        } else {
+            continue;
         }
-        return newArray;
     }
+    return newArray;
+}
 console.log("Array:", mixedArray, "\nOdd removed: ", checkOddEven(mixedArray));
