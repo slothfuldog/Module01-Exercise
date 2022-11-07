@@ -6,45 +6,45 @@ let nums = [13, 2, 45, 40, 15],
     })[0],
     high = nums.sort((a, b) => {
         return b - a;
-    })[0],
-    avg = (array) => {
-        let total = 0;
-        for (let i = 0; i < array.length; i++) {
-            total += array[i];
-        }
-        return total / array.length;
-    };
+    })[0];
+let avg = (array) => {
+    let total = 0;
+    for (let i = 0; i < array.length; i++) {
+        total += array[i];
+    }
+    return total / array.length;
+};
 console.log("Min: ", low, "Max: ", high, "Average: ", avg(nums));
 //without
 let lowest = (array) => {
-        let low = 0;
-        for (let i = 0; i < array.length; i++) {
-            if (i === 0) {
-                low = array[i];
-            } else if (array[i] < low) {
-                low = array[i];
-            }
+    let low = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (i === 0) {
+            low = array[i];
+        } else if (array[i] < low) {
+            low = array[i];
         }
-        return low;
-    },
-    highest = (array) => {
-        let high = 0;
-        for (let i = 0; i < array.length; i++) {
-            if (i === 0) {
-                high = array[i];
-            } else if (array[i] > high) {
-                high = array[i];
-            }
+    }
+    return low;
+};
+let highest = (array) => {
+    let high = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (i === 0) {
+            high = array[i];
+        } else if (array[i] > high) {
+            high = array[i];
         }
-        return high;
-    },
-    average = (array) => {
-        let total = 0;
-        for (let i = 0; i < array.length; i++) {
-            total = total + array[i];
-        }
-        return total / array.length;
-    };
+    }
+    return high;
+};
+let average = (array) => {
+    let total = 0;
+    for (let i = 0; i < array.length; i++) {
+        total = total + array[i];
+    }
+    return total / array.length;
+};
 console.log("Min: ", lowest(nums), "Max: ", highest(nums), "Average: ", average(nums));
 
 //question 2
