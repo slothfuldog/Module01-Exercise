@@ -74,8 +74,8 @@ let removeOdd = (arr) => {
 let result = removeOdd(nums);
 console.log(result);
 //question 5
-let str = "Hello World ! tee";
-let search = " ";
+let str = "Hello World Bro!";
+let search = "l";
 let splitDuplication = (string, search) => {
     let j = 0;
     let len = string.length;
