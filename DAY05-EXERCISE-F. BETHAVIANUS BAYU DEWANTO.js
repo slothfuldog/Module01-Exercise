@@ -83,39 +83,39 @@ resultSplit = customSplit(str, search)
 console.log(resultSplit);
 //question 4
 let array1 = [4, 5, 2, 2, 4],
-    array2 = [3, 4, 2, 6, 7, 12],
-    addition = (array1, array2) => {
-        let len1 = array1.length,
-            len2 = array2.length,
-            max = 0,
-            min = 0,
-            total = 0,
-            newArray = [];
-        if (len1 > len2) {
-            max = len1;
-            min = len2;
-        } else {
-            max = len2;
-            min = len1;
-        }
-        for (let i = 0; i < max; i++) {
-            if (i < min) {
-                total = array1[i] + array2[i];
-                newArray.push(total);
-            } else {
-                if (len1 > len2) {
-                    total += array1[i];
-                    newArray.push(total);
-                } else if (len2 > len1) {
-                    total += array2[i];
-                    newArray.push(total);
-                }
-            }
-            total = 0;
-
-        }
-        return newArray;
+    array2 = [3, 4, 2, 6, 7, 12]
+let addition = (array1, array2) => {
+    let len1 = array1.length,
+        len2 = array2.length,
+        max = 0,
+        min = 0,
+        total = 0,
+        newArray = [];
+    if (len1 > len2) {
+        max = len1;
+        min = len2;
+    } else {
+        max = len2;
+        min = len1;
     }
+    for (let i = 0; i < max; i++) {
+        if (i < min) {
+            total = array1[i] + array2[i];
+            newArray.push(total);
+        } else {
+            if (len1 > len2) {
+                total += array1[i];
+                newArray.push(total);
+            } else if (len2 > len1) {
+                total += array2[i];
+                newArray.push(total);
+            }
+        }
+        total = 0;
+
+    }
+    return newArray;
+}
 console.log(addition(array1, array2));
 
 //question 5
