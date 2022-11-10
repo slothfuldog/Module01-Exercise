@@ -60,15 +60,11 @@ let array1 = [{
         name: "Student2",
         email: "student2@gmail.com"
     }]
-if (array1.length > array2.length) {
-    max = array1.length;
-} else {
-    max = array2.length
-}
 let checkDuplicate = (input1, input2) => {
     let merge = input1.concat(input2);
+    let count = 0;
     for (let i = 0; i < merge.length; i++) {
-        for (let j = 1; j < merge.length; j++) {
+        for (let j = i + 1; j < merge.length; j++) {
             if (merge[i].name === merge[j].name && merge[i].email === merge[j].email) {
                 merge.splice(j, 1);
             }
