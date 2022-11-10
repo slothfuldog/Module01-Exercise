@@ -91,7 +91,7 @@ let switchPropVal = (array) => {
     let foo;
     let keys = [];
     for (let i = 0; i < array.length; i++) {
-        data = array[i];
+        let data = array[i];
         for (let key in data) {
             foo = key;
             key = data[key];
