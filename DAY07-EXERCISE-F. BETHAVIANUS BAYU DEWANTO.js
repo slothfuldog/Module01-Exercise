@@ -62,7 +62,6 @@ let array1 = [{
     }]
 let checkDuplicate = (input1, input2) => {
     let merge = input1.concat(input2);
-    let count = 0;
     for (let i = 0; i < merge.length; i++) {
         for (let j = i + 1; j < merge.length; j++) {
             if (merge[i].name === merge[j].name && merge[i].email === merge[j].email) {
