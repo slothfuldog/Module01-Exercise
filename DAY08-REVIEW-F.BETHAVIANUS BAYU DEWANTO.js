@@ -19,7 +19,6 @@ let print = (data, callback) => {
     str = '';
     for (let key in data) {
         let tempData = data[key]
-        let index = key;
         const {
             name,
             brand,
@@ -27,7 +26,7 @@ let print = (data, callback) => {
             cc
         } = tempData;
         if (callback) {
-            if (callback(data[index])) {
+            if (callback(data[key])) {
                 str += `${parseInt(key) + 1}. ${brand} ${name} with ${machine} ${cc.toLocaleString("id")}\n`;
             }
         } else {
