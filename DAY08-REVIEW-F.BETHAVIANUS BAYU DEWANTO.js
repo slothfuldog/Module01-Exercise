@@ -17,8 +17,8 @@ let myObj = [{
 
 let print = (data, callback) => {
     str = '';
-    for (let key in data) {
-        let tempData = data[key]
+    for (let index in data) {
+        let tempData = data[index]
         const {
             name,
             brand,
@@ -26,11 +26,11 @@ let print = (data, callback) => {
             cc
         } = tempData;
         if (callback) {
-            if (callback(data[key])) {
-                str += `${parseInt(key) + 1}. ${brand} ${name} with ${machine} ${cc.toLocaleString("id")}\n`;
+            if (callback(data[index])) {
+                str += `${parseInt(index) + 1}. ${brand} ${name} with ${machine} ${cc.toLocaleString("id")}\n`;
             }
         } else {
-            str += `${parseInt(key) + 1}. ${brand} ${name} with ${machine} ${cc.toLocaleString("id")}\n`;
+            str += `${parseInt(index) + 1}. ${brand} ${name} with ${machine} ${cc.toLocaleString("id")}\n`;
         }
     }
     return str;
