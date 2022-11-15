@@ -29,7 +29,7 @@ let mapDuplicate = (array, cb) => {
     return newArr;
 }
 console.log("boolean", mapDuplicate(arr, (arr) => arr >= 5));
-console.log("not boolean",mapDuplicate(arr, (arr) => arr * 5));
+console.log("not boolean", mapDuplicate(arr, (arr) => arr * 5));
 
 //Title: duplicate filter function which loops every value in array and make a new array with condition
 //Input: 2 param which are array type data and callback function
@@ -44,7 +44,7 @@ let filterDuplicate = (array, cb) => {
             //4. IF callback funct exist check IF the function output is boolean
             if (typeof cb(array[i]) === "boolean") {
                 //5. IF so check IF the output of callback true push array value of current index
-                if(cb(array[i])){
+                if (cb(array[i])) {
                     newArr.push(array[i])
                 }
             }
@@ -63,28 +63,28 @@ let filterDuplicate = (array, cb) => {
     return newArr;
 }
 console.log("boolean", filterDuplicate(arr, (arr) => arr >= 5));
-console.log("not boolean",filterDuplicate(arr, (arr) => arr * 5));
+console.log("not boolean", filterDuplicate(arr, (arr) => arr * 5));
 
 //Title: findIndex function duplication
 //input: 2 params which are array and callback function
-let findIndexDuplicate = (array, cb)=>{
+let findIndexDuplicate = (array, cb) => {
     //process: 
     //1. make variable with number data type (value = 0)
     let index = 0;
     //2. loop array param from the begining to the end of index
-    for(let i = 0; i < array.length; i++){
+    for (let i = 0; i < array.length; i++) {
         //3. in loop, check IF there is a callback function
-        if(cb){
+        if (cb) {
             //4. IF callback funct exist check IF the function output is boolean
-            if(typeof cb(array[i]) === "boolean"){
-                if(cb(array[i])){
+            if (typeof cb(array[i]) === "boolean") {
+                if (cb(array[i])) {
                     //5. IF so check IF the output of callback true, reassign to variable with current index return variable
                     index = i;
                     return index;
                 }
             }
             //6. ELSE return variable
-            else{
+            else {
                 return index;
             }
         }
