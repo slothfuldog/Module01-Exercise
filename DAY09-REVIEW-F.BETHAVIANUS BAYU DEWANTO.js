@@ -89,6 +89,8 @@ let findIndexDuplicate = (array, cb) => {
             }
         }
     }
+    //7. IF there is no callback return index
+    return index;
     //Output: index variable with number type data
 }
-console.log(findIndexDuplicate(arr, (arr) => arr === 7));
+console.log(findIndexDuplicate(arr, (arr) => arr === 4));
