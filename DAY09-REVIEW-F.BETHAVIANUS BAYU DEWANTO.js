@@ -10,17 +10,10 @@ let mapDuplicate = (array, cb) => {
     for (let i = 0; i < array.length; i++) {
         //3. in loop, check IF there is a callback function
         if (cb) {
-            //4. IF callback funct exist check IF the function output is bollean return result in boolean
-            if (typeof cb(array[i]) === "boolean") {
-                newArr.push(cb(array[i]))
-            }
-            //5. IF not return the result
-            else {
-                newArr.push(cb(array[i]));
-            }
-
+            //4. IF callback funct exist, push the result of callback funct
+            newArr.push(cb(array[i]))
         }
-        //6. IF there is no callback function just push it the the new array variable
+        //5. IF there is no callback function just push it the the new array variable
         else {
             newArr.push(array[i]);
         }
