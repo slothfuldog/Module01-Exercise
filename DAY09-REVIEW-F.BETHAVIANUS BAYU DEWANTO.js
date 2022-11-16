@@ -36,18 +36,18 @@ let filterDuplicate = (array, cb) => {
         if (cb) {
             //4. IF callback funct exist check IF the function output is boolean
             if (typeof cb(array[i]) === "boolean") {
-                //5. IF so check IF the output of callback true push array value of current index
+                //5. IF so check IF the output of callback true, push array value of current index
                 if (cb(array[i])) {
                     newArr.push(array[i])
                 }
             }
-            //5. IF not return the result
+            //6. IF not push everything
             else {
                 newArr.push(array[i]);
             }
 
         }
-        //6. IF there is no callback function just push it the the new array variable
+        //7. IF there is no callback function just push it the the new array variable
         else {
             newArr.push(array[i]);
         }
