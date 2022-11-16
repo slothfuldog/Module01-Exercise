@@ -1,10 +1,11 @@
 //Array Example
 let arr = [1, 2, 3, 4, 5, 6, 7, 8]
+console.log("Array: ", arr)
 //Title: duplicate map function which loops every value in array and make a new array with condition
 //Input: 2 param which are array type data and callback function
 let mapDuplicate = (array, cb) => {
     //process:
-    //1. make a new varible with empty array
+    //1. make a new variable with empty array
     let newArr = [];
     //2. loop array param from the first index to last index
     for (let i = 0; i < array.length; i++) {
@@ -21,14 +22,16 @@ let mapDuplicate = (array, cb) => {
     //Output: array
     return newArr;
 }
-console.log("boolean", mapDuplicate(arr, (arr) => arr >= 5));
-console.log("not boolean", mapDuplicate(arr, (arr) => arr * 5));
+console.log("custom map boolean", mapDuplicate(arr, (arr) => arr >= 5));
+console.log("using built-in map", arr.map((val) => val >= 5));
+console.log("custom map but not boolean", mapDuplicate(arr, (arr) => arr * 5));
+console.log("using built-in map", arr.map((val) => val * 5));
 
 //Title: duplicate filter function which loops every value in array and make a new array with condition
 //Input: 2 param which are array type data and callback function
 let filterDuplicate = (array, cb) => {
     //process:
-    //1. make a new varible with empty array
+    //1. make a new variable with empty array
     let newArr = [];
     //2. loop array param from the first index to last index
     for (let i = 0; i < array.length; i++) {
@@ -38,7 +41,7 @@ let filterDuplicate = (array, cb) => {
             if (typeof cb(array[i]) === "boolean") {
                 //5. IF so check IF the output of callback true, push array value of current index
                 if (cb(array[i])) {
-                    newArr.push(array[i])
+                    newArr.push(array[i]);
                 }
             }
             //6. IF not push everything
@@ -55,8 +58,10 @@ let filterDuplicate = (array, cb) => {
     //Output: array
     return newArr;
 }
-console.log("boolean", filterDuplicate(arr, (arr) => arr >= 5));
-console.log("not boolean", filterDuplicate(arr, (arr) => arr * 5));
+console.log("custom filter boolean:", filterDuplicate(arr, (arr) => arr >= 5));
+console.log("using built-in filter:", arr.filter((val) => val >= 5))
+console.log("filter but not boolean:", filterDuplicate(arr, (arr) => arr * 5));
+console.log("using built-in filter:", arr.filter((val) => val * 5));
 
 //Title: findIndex function duplication
 //input: 2 params which are array and callback function
@@ -74,6 +79,8 @@ let findIndexDuplicate = (array, cb) => {
                     //5. IF so check IF the output of callback true, reassign to variable with current index return variable
                     index = i;
                     return index;
+                } else {
+                    index = -1;
                 }
             }
             //6. ELSE return variable
@@ -86,4 +93,7 @@ let findIndexDuplicate = (array, cb) => {
     return index;
     //Output: index variable with number type data
 }
-console.log(findIndexDuplicate(arr, (arr) => arr === 4));
+console.log("custom findIndex:", findIndexDuplicate(arr, (arr) => arr === 7));
+console.log("Using built-in findIndex:", arr.findIndex((val) => val === 7))
+console.log("custom findIndex:", findIndexDuplicate(arr, (arr) => arr > 8));
+console.log("Using built-in findIndex:", arr.findIndex((val) => val > 8));
