@@ -25,7 +25,7 @@ let mapDuplicate = (array, cb) => {
 console.log("custom map boolean", mapDuplicate(arr, (arr) => arr >= 5));
 console.log("using built-in map", arr.map((val) => val >= 5));
 console.log("custom map but not boolean", mapDuplicate(arr, (arr) => arr * 5));
-console.log("using built-in map", arr.map((val) => val * 5));
+console.log("using built-in map", arr.map((val) => val * 4));
 
 //Title: duplicate filter function which loops every value in array and make a new array with condition
 //Input: 2 param which are array type data and callback function
