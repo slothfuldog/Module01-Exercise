@@ -12,7 +12,7 @@ let mapDuplicate = (array, cb) => {
         //3. in loop, check IF there is a callback function
         if (cb) {
             //4. IF callback funct exist, push the result of callback funct
-            newArr.push(cb(array[i]))
+            newArr.push(cb(array[i], i))
         }
         //5. IF there is no callback function just push it the the new array variable
         else {
@@ -58,7 +58,7 @@ let filterDuplicate = (array, cb) => {
     //Output: array
     return newArr;
 }
-console.log("custom filter boolean:", filterDuplicate(arr, (arr) => arr >= 5));
+console.log("custom filter boolean:", filterDuplicate(arr, (arr) => arr > 3));
 console.log("using built-in filter:", arr.filter((val) => val >= 5))
 console.log("filter but not boolean:", filterDuplicate(arr, (arr) => arr * 5));
 console.log("using built-in filter:", arr.filter((val) => val * 5));
