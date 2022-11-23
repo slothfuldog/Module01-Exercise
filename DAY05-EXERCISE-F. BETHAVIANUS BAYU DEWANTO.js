@@ -14,7 +14,6 @@ let avg = (array) => {
     }
     return total / array.length;
 };
-console.log("Min: ", low, "Max: ", high, "Average: ", avg(nums));
 //without
 let lowest = (array) => {
     let low = 0;
@@ -45,7 +44,7 @@ let average = (array) => {
     }
     return total / array.length;
 };
-console.log("Min: ", lowest(nums), "Max: ", highest(nums), "Average: ", average(nums));
+
 
 //question 2
 let arrayString = ["Hello", "World", "Brothers!", "do", "re", "mi", "fa"];
@@ -62,12 +61,9 @@ let concetenating = (array) => {
     }
     return string;
 }
-console.log(concetenating(arrayString));
 //question 3
-let str = "Hello World Bro! molotov",
-    search = "lo",
-    splitArray = [];
-let customSplit = (string, search) => {
+let splitArray = [];
+let customSplit = (string, search,) => {
     let deletedIndex = string.indexOf(search),
         tempString = string.slice(0, deletedIndex),
         deletedString = string.replace(`${tempString}${search}`, '');
@@ -78,9 +74,7 @@ let customSplit = (string, search) => {
         splitArray.push(string);
     }
     return splitArray;
-}
-resultSplit = customSplit(str, search)
-console.log(resultSplit);
+};
 //question 4
 let array1 = [4, 5, 2, 2, 4],
     array2 = [3, 4, 2, 6, 7, 12]
@@ -116,7 +110,6 @@ let addition = (array1, array2) => {
     }
     return newArray;
 }
-console.log(addition(array1, array2));
 
 //question 5
 let newArray1 = [3, 5, "Hello", "Sheesh"];
@@ -129,10 +122,9 @@ let pushCheck = (array, element) => {
     }
     return newArray;
 }
-console.log(pushCheck(newArray1, 3));
 //last question
 let mixedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-let checkOddEven = (array) => {
+let checkEven = (array) => {
     let newArray = []
     for (i = 0; i < array.length; i++) {
         if (array[i] % 2 === 0) {
@@ -143,4 +135,5 @@ let checkOddEven = (array) => {
     }
     return newArray;
 }
-console.log("Array:", mixedArray, "\nOdd removed: ", checkOddEven(mixedArray));
+
+module.exports = {lowest, highest, average, concetenating, customSplit, addition, pushCheck, checkEven}
